@@ -4,10 +4,10 @@ import (
     "log"
     "bytes"
     "crypto/aes"
-	"crypto/cipher"
+    "crypto/cipher"
     "crypto/md5"
     "encoding/hex"
-	"strconv"
+    "strconv"
 )
 
 const Funny = `
