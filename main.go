@@ -27,11 +27,11 @@ func Md5sum(text string) string {
 }
 
 func KeyGenerator(val int) string {
-    return Md5sum(strconv.Itoa(val))[:32]
+    return Md5sum(strconv.Itoa(val + 69))[:32]
 }
 
 func NonceGenerator(val int) string {
-    return KeyGenerator(val)[:12]
+    return KeyGenerator(val + 6969)[:12]
 }
 
 func Decrypt(ciphertext, key, nonce []byte) (plaintext []byte) {
