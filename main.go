@@ -1,6 +1,7 @@
 package main
 
 import (
+    "log"
     "crypto/aes"
 	"crypto/cipher"
     "crypto/md5"
@@ -8,7 +9,7 @@ import (
 	"strconv"
 )
 
-const Banner = `
+const Funny = `
     ________ ___  ___  ________   ________       ___    ___
     |\  _____\\  \|\  \|\   ___  \|\   ___  \    |\  \  /  /|
     \ \  \__/\ \  \\\  \ \  \\ \  \ \  \\ \  \   \ \  \/  / /
@@ -29,7 +30,7 @@ func KeyGenerator(val int) string {
 }
 
 func NonceGenerator(val int) string {
-    return keyGenerator(val)[:12]
+    return KeyGenerator(val)[:12]
 }
 
 func Decrypt(ciphertext, key, nonce []byte) (plaintext []byte) {
