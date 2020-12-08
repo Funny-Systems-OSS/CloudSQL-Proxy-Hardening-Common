@@ -1,4 +1,4 @@
-package funny
+package main
 
 import (
     "crypto/aes"
