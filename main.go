@@ -1,4 +1,4 @@
-package main
+package funny
 
 import (
     "log"
