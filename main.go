@@ -19,7 +19,7 @@ const Banner = `
                                                 \|___|/
 `
 
-func Md5sum(text string) string {
+func md5sum(text string) string {
     hash := md5.Sum([]byte(text))
     return hex.EncodeToString(hash[:])
 }
