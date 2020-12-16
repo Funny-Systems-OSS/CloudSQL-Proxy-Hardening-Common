@@ -7,7 +7,6 @@ import (
     "crypto/cipher"
     "crypto/md5"
     "encoding/hex"
-    "strconv"
 )
 
 func Md5sum(text string) string {
@@ -15,12 +14,12 @@ func Md5sum(text string) string {
     return hex.EncodeToString(hash[:])
 }
 
-func KeyGenerator(val int) string {
-    return Md5sum(strconv.Itoa(val + 69))[:32]
+func KeyGenerator(val string) string {
+    return Md5sum(val)[:32]
 }
 
-func NonceGenerator(val int) string {
-    return KeyGenerator(val + 6969)[:12]
+func NonceGenerator(val string) string {
+    return KeyGenerator(val)[:12]
 }
 
 func Decrypt(ciphertext, key, nonce []byte) (plaintext []byte) {
