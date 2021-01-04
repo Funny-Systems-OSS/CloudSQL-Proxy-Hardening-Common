@@ -123,7 +123,7 @@ func opensslAes256Decrypt(passphrase string, encryptedBase64 string) (string, er
 	return string(plaintext), nil
 }
 
-func opensslAes256Pbkdf2Decrypt(passphrase string, encryptedBase64 string) (string, error) {
+func OpensslAes256Pbkdf2Decrypt(passphrase string, encryptedBase64 string) (string, error) {
 	data := make([]byte, base64.StdEncoding.DecodedLen(len([]byte(encryptedBase64))))
 	if n, err := base64.StdEncoding.Decode(data, []byte(encryptedBase64)); err != nil {
 		return "", fmt.Errorf("Invalid string: %s", err)
